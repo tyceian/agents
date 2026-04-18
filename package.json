@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "tsup src",
-    "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
+up src/index.ts --format esm --dts --out-dir dist --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src --ext .ts",
@@ -47,6 +47,6 @@
     "@cloudflare/workers-types": "^4.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 }
