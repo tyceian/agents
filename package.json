@@ -1,101 +1,52 @@
 {
-  "name": "@cloudflare/agents-repo",
-  "description": "The monorepo for Cloudflare Agents and related work",
+  "name": "agents",
+  "version": "0.0.1",
+  "description": "A fork of cloudflare/agents — framework for building AI agents on Cloudflare Workers",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --out-dir dist",
+    "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "changeset": "changeset",
+    "version": "tsx .github/changeset-version.ts",
+    "release": "tsx .github/changeset-publish.ts"
+  },
   "keywords": [
     "cloudflare",
     "workers",
-    "ai",
     "agents",
-    "durable objects",
-    "workflows"
+    "ai",
+    "durable-objects"
   ],
-  "author": "Cloudflare Agents <1800-agents@cloudflare.com>",
-  "private": true,
-  "scripts": {
-    "build": "nx run-many -t build",
-    "format": "oxfmt --write .",
-    "format:check": "oxfmt --check .",
-    "lint": "oxlint .",
-    "typecheck": "npx tsx scripts/typecheck.ts",
-    "check:exports": "npx tsx scripts/check-exports.ts",
-    "check": "sherif && npm run check:exports && oxfmt --check . && oxlint . && npm run typecheck",
-    "test": "nx run-many -t test",
-    "ci": "oxfmt --write . && nx run-many -t build test && npm run check",
-    "test:e2e": "nx run-many -t test:e2e",
-    "test:react": "npm run test:react -w agents",
-    "postinstall": "patch-package",
-    "prepare:playwright": "playwright install --with-deps chromium",
-    "prepare": "husky"
-  },
   "license": "MIT",
-  "version": "0.0.0",
   "devDependencies": {
-    "@ai-sdk/anthropic": "^3.0.69",
-    "@ai-sdk/google": "^3.0.63",
-    "@ai-sdk/openai": "^3.0.53",
-    "@ai-sdk/react": "^3.0.166",
-    "@changesets/changelog-github": "^0.6.0",
-    "@changesets/cli": "^2.30.0",
-    "@cloudflare/kumo": "^1.18.0",
-    "@cloudflare/vite-plugin": "^1.32.3",
-    "@cloudflare/vitest-pool-workers": "^0.14.7",
-    "@cloudflare/workers-types": "^4.20260416.2",
-    "@modelcontextprotocol/sdk": "1.29.0",
-    "@openai/agents": "^0.8.3",
-    "@openai/agents-extensions": "^0.8.3",
-    "@phosphor-icons/react": "^2.1.10",
-    "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "@vitest/browser": "^4.1.4",
-    "@vitest/browser-playwright": "^4.1.4",
-    "@vitest/runner": "^4.1.4",
-    "ai": "^6.0.164",
-    "autoevals": "^0.0.132",
-    "concurrently": "^9.2.1",
-    "evalite": "^0.19.0",
-    "fast-glob": "^3.3.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "nx": "^22.6.5",
-    "oxfmt": "^0.45.0",
-    "oxlint": "^1.60.0",
-    "partyserver": "^0.4.1",
-    "partysocket": "1.1.16",
-    "patch-package": "^8.0.1",
-    "pkg-pr-new": "^0.0.66",
-    "playwright": "^1.59.1",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "sherif": "^1.11.1",
-    "tsdown": "^0.21.8",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.8",
-    "vitest": "4.1.4",
-    "vitest-browser-react": "^2.2.0",
-    "workers-ai-provider": "^3.1.11",
-    "wrangler": "^4.83.0",
-    "zod": "^4.3.6"
+    "@changesets/cli": "^2.27.1",
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "@types/node": "^20.11.5",
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
   },
-  "workspaces": [
-    "examples/*",
-    "packages/*",
-    "voice-providers/*",
-    "guides/*",
-    "experimental/*",
-    "openai-sdk/*",
-    "site/*"
-  ],
-  "overrides": {
-    "esbuild": "^0.25.1"
+  "peerDependencies": {
+    "@cloudflare/workers-types": "^4.0.0"
   },
-  "lint-staged": {
-    "*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,astro,svelte,css}": [
-      "oxfmt --write"
-    ]
-  },
-  "packageManager": "npm@11.12.1"
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
