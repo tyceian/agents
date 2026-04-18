@@ -13,7 +13,8 @@
     }
   },
   "files": [
-    "dist"scripts": {
+    "n  ],
+  "scripts": {
     "build": "tsup src --dts --out-dir dist",
     "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
     "test": "vitest run",
@@ -39,7 +40,7 @@
     "tsup": "^8.0.1",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
-    "vitest": "^1.2.1"
+    "vitest": "^2.0.0"
   },
   "peerDependencies": {
     "@cloudflare/workers-types": "^4.0.0"
