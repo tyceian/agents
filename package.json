@@ -12,11 +12,9 @@
       "import": "./dist/index.js"
     }
   },
-  "": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --out-dir dist",
+  "files": [
+    "dist"scripts": {
+    "build": "tsup src --dts --out-dir dist",
     "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
     "test": "vitest run",
     "test:watch": "vitest",
