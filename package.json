@@ -13,11 +13,11 @@
     }
   },
   "files": [
-    ""
+    "dist"
   ],
   "scripts": {
-    "build": "tsup src",
-up src/index.ts --format esm --dts --out-dir dist --watch",
+    "build": "tsup src/index.ts --format esm --dts --out-dir dist",
+    "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src --ext .ts",
