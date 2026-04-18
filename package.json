@@ -13,9 +13,10 @@
     }
   },
   "files": [
-    "n  ],
+    ""
+  ],
   "scripts": {
-    "build": "tsup src --dts --out-dir dist",
+    "build": "tsup src",
     "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
     "test": "vitest run",
     "test:watch": "vitest",
