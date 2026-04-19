@@ -21,7 +21,8 @@
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
     "rebuild": "npm run clean && npm run build",
-    "lint": "tsc --noEmit && echo 'No type errors found'"
+    "lint": "tsc --noEmit && echo 'No type errors found'",
+    "build:prod": "npm run clean && tsup src/index.ts --format cjs,esm --dts --minify"
   },
   "keywords": [
     "cloudflare",
