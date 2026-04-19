@@ -23,7 +23,8 @@
     "rebuild": "npm run clean && npm run build",
     "lint": "tsc --noEmit && echo 'No type errors found'",
     "build:prod": "npm run clean && tsup src/index.ts --format cjs,esm --dts --minify",
-    "build:dev": "tsup src/index.ts --format cjs,esm --dts --sourcemap"
+    "build:dev": "tsup src/index.ts --format cjs,esm --dts --sourcemap",
+    "build:analyze": "tsup src/index.ts --format cjs,esm --dts --metafile"
   },
   "keywords": [
     "cloudflare",
