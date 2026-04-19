@@ -13,12 +13,11 @@
     }
   },
   "files": [
-    "dist"
-  ],
-  "scripts": {
+    "  "scripts": {
     "build": "tsup src/index.ts --out-dir dist",
     "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
-    "test": "vitesttest:watch": "vitest",
+    "test": "vitest",
+    "test:watch": "vitest",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
     "changeset": "changeset",
