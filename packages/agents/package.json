@@ -20,7 +20,8 @@
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "rebuild": "npm run clean && npm run build"
+    "rebuild": "npm run clean && npm run build",
+    "lint": "tsc --noEmit && echo 'No type errors found'"
   },
   "keywords": [
     "cloudflare",
