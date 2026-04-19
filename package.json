@@ -16,10 +16,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --out-dir dist",
+    "build": "tsup src/index.ts --out-dir dist",
     "dev": "tsup src/index.ts --format esm --dts --out-dir dist --watch",
-    "test": "vitest run",
-    "test:watch": "vitest",
+    "test": "vitesttest:watch": "vitest",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit",
     "changeset": "changeset",
@@ -48,5 +47,10 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudflare/agents",
+    "fork": true
   }
 }
